@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #ebedf5;
   --foreground: #171717;
 }
 
@@ -23,4 +23,62 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.icon-clip {
+  clip-path: path(
+    "M 0,24 C 0,2.55,2.55,0,24,0 C 45.45,0,48,2.55,48,24 C 48,45.45,45.45,48,24,48 C 2.55,48,0,45.45,0,24"
+  );
+}
+
+.ant-menu-item {
+  position: relative;
+}
+
+.ant-menu-item-selected:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: url("/kook/circle.png");
+  background-size: 48px;
+  width: 48px;
+  height: 48px;
+  z-index: 10;
+  transition: none !important;
+  transform: none !important;
+}
+
+.Menu-circle:after {
+  display: none;
+}
+
+.menu-pill {
+  background-color: #7acc35;
+  border-radius: 0 4px 4px 0;
+  width: 4px;
+  height: 32px;
+  margin-top: 16px;
+  position: absolute;
+  left: 0;
+  transition: top 0.3s ease-in-out;
+}
+.ant-layout-sider-children {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.icon-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.icon-container:hover {
+  background-color: #2e303a17;
+  border-radius: 8px;
+  cursor: pointer;
 }
