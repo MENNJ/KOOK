@@ -157,12 +157,12 @@ export function VoiceInput({ visualizerBars = 48 }: VoiceInputProps) {
   return (
     <>
       <div
-        className="border-x-[1px] border-t-[1px] dark:bg-white/20 bg-white/50 border-[#00000014] hover:bg-black/10 w-8 h-3.5 flex rounded-t-lg items-center justify-center mx-auto cursor-pointer"
+        className="dark:bg-[#35373d] bg-[#fefefe] hover:bg-black/10 w-8 h-3.5 flex rounded-t-lg items-center justify-center mx-auto cursor-pointer"
         onClick={handleSlideOutClick}
       >
         {isSlideOutOpen ? <DownOutlined /> : <UpOutlined />}
       </div>
-      <div className="border-[1px] border-[#00000014] px-2 py-1 mb-2 mx-2 bg-[#fefefe] dark:bg-[#35373d] rounded-3xl">
+      <div className="px-2 py-1 mb-2 mx-2 bg-[#fefefe] dark:bg-[#35373d] rounded-3xl">
         <div
           className={cn(
             "overflow-hidden transition-all duration-500",
