@@ -38,7 +38,7 @@ export function ChatInput({
   };
 
   return (
-    <div className={cn("relative w-full", className)}>
+    <div className={cn("relative w-full overflow-hidden", className)}>
       <Textarea
         id={id}
         placeholder={placeholder}
@@ -46,10 +46,10 @@ export function ChatInput({
           "placeholder:text-black/50 dark:placeholder:text-white/50",
           "border-none ring-transparent dark:ring-transparent",
           "text-black dark:text-white text-wrap",
-          "overflow-y-auto resize-none",
+          "overflow-y-auto resize-none overflow-hidden",
           "focus-visible:ring-0 focus-visible:ring-offset-0",
           "transition-[height] duration-100 ease-out",
-          "leading-[1.2]",
+          "leading-[1.5]",
           `min-h-[${minHeight}px]`,
           `max-h-[${maxHeight}px]`,
           "[&::-webkit-resizer]:hidden"
