@@ -31,7 +31,7 @@ const ContentBottom: React.FC<ContentBottomProps> = ({ className }) => {
     >
       <div className="h-full relative">
         <div className="rounded-[8px] flex flex-col justify-center items-center w-full h-full bg-white">
-          <div className="bg-[#e1ebff17] rounded-2xl w-full h-full px-2 py-2 flex relative z-[1]">
+          <div className="bg-[#fefefe] rounded-2xl w-full h-full px-2 py-2 flex relative z-[1]">
             <div
               className={`transition-all duration-800 ease-in-out ${
                 isExpanded
