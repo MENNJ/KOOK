@@ -1,21 +1,25 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Layout, ConfigProvider } from "antd";
-import Header from "@/component/Header";
-import Content from "@/component/Content";
-import Sider from "@/component/Sider";
+import Header from "@/components/Header";
+import Content from "@/components/Content";
+import Sider from "@/components/Sider";
 
 const App: React.FC = () => {
+  const [collapsed, setCollapsed] = useState(false);
+
   return (
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: "#7acc35",
-          colorBgContainer: "#ebedf5",
+          colorPrimary: "transparent",
+          colorBgContainer: "transparent",
+          colorBgBase: "transparent",
+          colorBgElevated: "#ffffff",
         },
         components: {
           Menu: {
-            itemBg: "#ebedf5",
+            itemBg: "transparent",
             itemSelectedBg: "#ffffff",
             itemHoverBg: "#ffffff",
             itemSelectedColor: "#000000",
@@ -30,7 +34,16 @@ const App: React.FC = () => {
             activeBarBorderWidth: 0,
           },
           Layout: {
-            bodyBg: "transparent",
+            bodyBg: "#transparent",
+            headerBg: "#transparent",
+            lightSiderBg: "#transparent",
+            lightTriggerBg: "#transparent",
+            lightTriggerColor: "#transparent",
+            siderBg: "#transparent",
+            triggerBg: "#transparent",
+            triggerColor: "#transparent",
+            headerHeight: 32,
+            headerPadding: 0,
           },
           Modal: {
             borderRadiusLG: 24,
@@ -53,9 +66,9 @@ const App: React.FC = () => {
       }}
     >
       <Layout className="h-screen">
-        <Sider />
+        <Sider collapsed={collapsed} setCollapsed={setCollapsed} />
         <Layout className="h-full">
-          <Header />
+          <Header collapsed={collapsed} setCollapsed={setCollapsed} />
           <Content />
         </Layout>
       </Layout>

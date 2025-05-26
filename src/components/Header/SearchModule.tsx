@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Input, Modal, Tooltip, Tabs } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import type { TabsProps } from "antd";
+import IconButton from "@/components/iconButton";
 
 const TAB_ITEMS = [
   { key: "1", label: "综合", content: "综合" },
@@ -41,12 +42,10 @@ const SearchModule: React.FC = () => {
 
   return (
     <>
-      <Tooltip title="搜索">
-        <span className="icon-container" onClick={showModal}>
-          <SearchOutlined style={{ color: "#c6c9d2" }} />
-        </span>
-      </Tooltip>
-      
+      <IconButton tooltip="搜索中心" onClick={showModal}>
+        <SearchOutlined style={{ color: "#c6c9d2" }} />
+      </IconButton>
+
       <Modal
         keyboard
         className="relative"
@@ -63,18 +62,18 @@ const SearchModule: React.FC = () => {
           placeholder="请输入搜索内容"
           prefix={<SearchOutlined style={{ color: "#c6c9d2" }} />}
         />
-        
+
         <Tabs defaultActiveKey="1" items={items} />
-        
-        <div className="absolute left-0 bottom-0 h-10 shrink bg-[#ebedf5] w-full flex items-center px-6 text-xs rounded-b-3xl">
+
+        <div className="absolute left-0 bottom-0 h-10 shrink bg-[#ebedf5] w-full md:flex items-center px-6 text-xs rounded-b-3xl hidden">
           {SHORTCUTS.map((shortcut) => (
             <React.Fragment key={shortcut.action}>
               {shortcut.keys.map((key) => (
-                <span 
+                <span
                   key={key}
                   className={`border border-solid border-[#2E303A66] rounded-lg px-1.5 font-sans text-[#2E303A66] ${
-                    key === "↑" || key === "↓" 
-                      ? "h-[18px] leading-[16px] ml-1" 
+                    key === "↑" || key === "↓"
+                      ? "h-[18px] leading-[16px] ml-1"
                       : "h-[18px] leading-[18px]"
                   }`}
                 >
